@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "invoke-local":" serverless invoke local -f send_email_with_file",
     "format": "bundle exec rubocop -a",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
