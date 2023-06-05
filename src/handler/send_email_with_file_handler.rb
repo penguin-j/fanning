@@ -1,13 +1,13 @@
-require 'json'
+require './src/service/send_email_with_file_service'
 
 module SendEmailWithFile
   class Handler
     def self.execute(event:, context:)
+      @result = SendEmailWithFile::Service.new.execute
       {
         statusCode: 200,
         body: {
-          message: 'Go Serverless v1.0! Your function executed successfully!',
-          input: event
+          result: @result
         }.to_json
       }
     end
