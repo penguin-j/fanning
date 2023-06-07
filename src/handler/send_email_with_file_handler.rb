@@ -7,7 +7,11 @@ module SendEmailWithFile
       @req = {
         'source' => 'from@example.com',
         'destinations' => ['to@example.com'],
-        'raw_message' => 'Subject: Test email (contains an attachment)\nMIME-Version: 1.0\nContent-type: Multipart/Mixed; boundary="NextPart"\n\n--NextPart\nContent-Type: text/plain\n\n#{text}\n\n--NextPart\nContent-Type: text/plain;\nContent-Disposition: attachment; filename="attachment.txt"\n\n--NextPart--'
+        'subject' => 'Here is a subject.',
+        'body' => 'Here is a body.',
+        'content_type' => 'text/plain',
+        'mime_version' => '1.0',
+        'file_path' => 'temp/attachment.txt'
       }
 
       @result = SendEmailWithFile::Service.new.execute(@req)

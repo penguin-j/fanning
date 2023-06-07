@@ -6,7 +6,7 @@ module SendEmailWithFile
     def execute(req)
       @source = req['source']
       @destinations = req['destinations']
-      @raw_message = construct_raw_message
+      @raw_message = construct_raw_message(req)
 
       Helper::AWS::SesClient.new.send_raw_email(@source, @destinations, @raw_message)
 
@@ -15,13 +15,13 @@ module SendEmailWithFile
 
     private
 
-    def construct_raw_message
+    def construct_raw_message(email_params)
       @mail = Mail.new
-      @mail.subject = 'Here is a subject.'
-      @mail.body = 'Here is a body.'
-      @mail['content-type'] = 'text/plain'
-      @mail['MIME-Version'] = '1.0'
-      @mail.add_file('temp/attachment.txt')
+      @mail.subject = email_params['subject']
+      @mail.body = email_params['body']
+      @mail['content-type'] = email_params['content_type']
+      @mail['MIME-Version'] = email_params['mime_version']
+      @mail.add_file(email_params['file_path'])
 
       @mail.to_s
     end
