@@ -21,7 +21,7 @@ module SendEmailWithFile
       @mail.body = 'Here is a body.'
       @mail['content-type'] = 'text/plain'
       @mail['MIME-Versio'] = '1.0'
-      @mail.add_file('./temp/attachment.txt')
+      @mail.add_file('temp/attachment.txt')
 
       @mail.to_s
     end
