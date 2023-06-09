@@ -3,7 +3,7 @@ require './src/service/send_email_with_file_service'
 module SendEmailWithFile
   class Handler
     def self.execute(event:, context:)
-      @req = event
+      @req = JSON.parse(event['body'])
 
       @result = SendEmailWithFile::Service.new.execute(@req)
 
