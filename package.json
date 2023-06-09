@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "invoke-local":" serverless invoke local -f send_email_with_file --path quick_start/request.json",
+    "invoke-local": " serverless invoke local -f send_email_with_file --path quick_start/request.json",
     "format": "bundle exec rubocop -a",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "dependencies": {
-    "serverless": "^3.32.2"
+    "serverless": "^3.32.2",
+    "serverless-offline": "^12.0.4"
   },
   "devDependencies": {
     "serverless-ruby-layer": "^1.6.0"
