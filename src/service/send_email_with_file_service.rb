@@ -19,9 +19,10 @@ module SendEmailWithFile
       @mail = Mail.new
       @mail.subject = email_params['subject']
       @mail.body = email_params['body']
-      @mail['content-type'] = email_params['content_type']
-      @mail['MIME-Version'] = email_params['mime_version']
-      @mail.add_file(email_params['file_path'])
+      # TODO
+      @mail['content-type'] = email_params['contentType']
+      @mail['MIME-Version'] = email_params['mimeVersion']
+      @mail.add_file(email_params['filePath'])
 
       @mail.to_s
     end

@@ -1,0 +1,11 @@
+{
+    "source":"from@example.com",
+    "destinations":[
+        "to@example.com"
+    ],
+    "subject":"Here is a subject.",
+    "body":"Here is a body.",
+    "contentType":"text/plain",
+    "mimeVersion":"1.0",
+    "filePath":"quick_start/attachment.txt"
+}
