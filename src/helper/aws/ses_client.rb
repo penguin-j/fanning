@@ -4,7 +4,7 @@ module Helper
   module AWS
     class SesClient
       def initialize
-        @client = Aws::SES::Client.new(region: 'ap-northeast-1', endpoint: 'http://localhost:4566')
+        @client = Aws::SES::Client.new(region: 'ap-northeast-1')
       end
 
       def send_raw_email(source, destinations, raw_message)
