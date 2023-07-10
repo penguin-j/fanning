@@ -1,3 +1,4 @@
+require './src/const/app_const'
 require './src/helper/aws/ses_client'
 require 'mail'
 
@@ -21,8 +22,8 @@ module SendEmailWithFile
       @mail.subject = email_params['subject']
       @mail.body = email_params['body']
       # FIXME: 事前にスネークケースに変換しておきたい
-      @mail['content-type'] = email_params['contentType']
-      @mail['MIME-Version'] = email_params['mimeVersion']
+      @mail['content-type'] = AppConst.SMTP_PROPS__CONTENT_TYPE
+      @mail['MIME-Version'] = AppConst.SMTP_PROPS__MIME_VERSION
       @mail.add_file(email_params['filePath'])
 
       @mail.to_s
