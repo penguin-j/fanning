@@ -1,6 +1,6 @@
 {
-    "source":"from@example.com",
-    "destinations":[
+    "fromAddress":"from@example.com",
+    "toAddresses":[
         "to@example.com"
     ],
     "subject":"Here is a subject.",
